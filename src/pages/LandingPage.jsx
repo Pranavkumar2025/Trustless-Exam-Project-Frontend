@@ -1,9 +1,9 @@
-
-
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleAdminClick = () => {
     navigate('/admin');
@@ -17,30 +17,40 @@ const LandingPage = () => {
     navigate('/users');
   };
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-8">Trustless Examination System</h1>
-        <div className="space-x-4">
+    <div className={`${isDarkMode ? 'bg-gray-900' : 'bg-gradient-to-r from-green-200 via-blue-200 to-purple-200'} flex items-center justify-center min-h-screen transition-colors duration-500`}>
+      <div className={`${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'} text-center p-10 rounded-xl border-2 border-black shadow-lg transition-colors duration-500`}>
+        <h1 className="text-5xl font-extrabold mb-10 animate-pulse">Trustless Examination System</h1>
+        <div className="flex justify-center space-x-6 mb-6">
           <button
             onClick={handleAdminClick}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:-translate-y-1 transition-all duration-300"
           >
             Admin
           </button>
           <button
             onClick={handleStudentClick}
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:-translate-y-1 transition-all duration-300"
           >
             Student
           </button>
           <button
             onClick={handleAllUsersClick}
-            className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+            className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:-translate-y-1 transition-all duration-300"
           >
             All Users
           </button>
         </div>
+        <button
+          onClick={toggleDarkMode}
+          className={`${isDarkMode ? 'bg-yellow-500 hover:bg-yellow-600 text-gray-800' : 'bg-gray-800 hover:bg-gray-700 text-white'} font-bold py-2 px-4 rounded-lg shadow-lg transform hover:-translate-y-1 transition-all duration-300`}
+        >
+          {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        </button>
       </div>
     </div>
   );

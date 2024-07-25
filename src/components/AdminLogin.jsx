@@ -1,10 +1,8 @@
-
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { baseURL } from '../Url';
 
-const Login = () => {
+const Login = ({ isDarkMode }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -25,10 +23,8 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('Login successful:', data);
-        // Store admin ID in localStorage
         localStorage.setItem('adminId', data.adminId);
         setMessage('Login successful!');
-        // Redirect to QuestionSet page
         navigate('/questionset');
       } else {
         const errorData = await response.json();
@@ -42,24 +38,24 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleLogin} className="space-y-4">
+    <form onSubmit={handleLogin} className={`space-y-4 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
       <div>
-        <label className="block text-gray-700 text-sm font-bold mb-2">Username</label>
+        <label className="block text-sm font-bold mb-2">Username</label>
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full px-3 py-2 border rounded"
+          className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white focus:ring-blue-500' : 'bg-white border-gray-300 text-gray-800 focus:ring-blue-500'}`}
           required
         />
       </div>
       <div>
-        <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
+        <label className="block text-sm font-bold mb-2">Password</label>
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-3 py-2 border rounded"
+          className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white focus:ring-blue-500' : 'bg-white border-gray-300 text-gray-800 focus:ring-blue-500'}`}
           required
         />
       </div>

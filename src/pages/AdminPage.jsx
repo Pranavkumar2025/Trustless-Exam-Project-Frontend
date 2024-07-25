@@ -45,7 +45,7 @@ const AdminPage = () => {
       <div className="flex items-center justify-center flex-grow">
         <div className={`${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'} p-10 rounded-lg shadow-lg w-full max-w-md transition-colors duration-500`}>
           <h1 className="text-3xl font-extrabold mb-6">{isLogin ? 'Admin Login' : 'Admin Sign Up'}</h1>
-          {isLogin ? <Login /> : <SignUp />}
+          {isLogin ? <Login isDarkMode={isDarkMode} /> : <SignUp isDarkMode={isDarkMode} />}
           <button
             onClick={toggleForm}
             className="mt-6 text-blue-500 hover:text-blue-700 underline transition-colors duration-300"

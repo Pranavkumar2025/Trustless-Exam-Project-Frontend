@@ -59,10 +59,10 @@ const QuestionForm = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-r from-green-200 via-blue-200 to-purple-200 p-6">
+    <div className="flex flex-col min-h-screen bg-gradient-to-r from-green-200 via-blue-200 to-purple-200 p-2">
       {/* Header */}
-      <header className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-md">
-        <h1 className="text-xl font-bold">Trustless Examination System</h1>
+      <header className="flex items-center justify-between p-4 mb-4 bg-gradient-to-r rounded-xl from-gray-800 to-gray-900 text-white shadow-md">
+        <h1 className="text-xl font-bold">Question Set 📄</h1>
         <button
           onClick={() => navigate('/')}
           className="bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg shadow-lg"
@@ -73,7 +73,7 @@ const QuestionForm = () => {
 
       {/* Form Section */}
       <main className="flex-grow flex items-center justify-center">
-        <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-200">
+        <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg border w-[600px] border-gray-200">
           <h2 className="text-2xl font-bold mb-6 text-gray-800">Submit a New Question</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>

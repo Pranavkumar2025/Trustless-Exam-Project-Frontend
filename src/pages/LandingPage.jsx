@@ -23,9 +23,9 @@ const LandingPage = () => {
 
   return (
     <div className={`${isDarkMode ? 'bg-gray-900' : 'bg-gradient-to-r from-green-200 via-blue-200 to-purple-200'} flex items-center justify-center min-h-screen transition-colors duration-500`}>
-      <div className={`${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'} text-center p-10 rounded-xl border-2 border-black shadow-lg transition-colors duration-500`}>
-        <h1 className="text-5xl font-extrabold mb-10 animate-pulse">Trustless Examination System</h1>
-        <div className="flex justify-center space-x-6 mb-6">
+      <div className={`${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'} text-center p-10 rounded-xl border-2 border-black shadow-lg transition-colors duration-500 max-w-lg`}>
+        <h1 className="text-5xl font-extrabold mb-10 animate-pulse md:text-4xl sm:text-3xl">Trustless Examination System</h1>
+        <div className="flex flex-wrap justify-center space-x-6 mb-6 gap-4">
           <button
             onClick={handleAdminClick}
             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:-translate-y-1 transition-all duration-300"

@@ -73,7 +73,7 @@ const LandingPage = () => {
         <p className="text-lg font-semibold">
           Created by{' '}
           <span className="text-yellow-400 font-bold">Vaishnavi Raj</span>,{' '}
-          <span className="text-green-400 font-bold">Pratyush Raj</span>, and{' '}
+          <span className="text-green-400 font-bold">Pratyush Sinha</span>, and{' '}
           <span className="text-blue-400 font-bold">Pranav Kumar</span>
         </p>
       </footer>
